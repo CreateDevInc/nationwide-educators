@@ -14,3 +14,8 @@ Version:        0.1.0
   pointer-events: none !important;
   background-color: #555 !important;
 }
+
+.btn-join {
+  display: block;
+  margin: 0 0 20px 0;
+}

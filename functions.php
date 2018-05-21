@@ -12,6 +12,7 @@
 // Assumptions:
 // - When creating a course, that course should have the same slug across all pages
 
+include_once STYLESHEETPATH . '/includes/learndash.php' ;
 
 add_action( 'wp_enqueue_scripts', 'astra_parent_theme_enqueue_styles' );
 
@@ -59,9 +60,8 @@ function wpse127636_fix_register_urls($url, $path, $orig_scheme){
 }
 add_filter('site_url', 'wpse127636_fix_register_urls', 10, 3);
 
-//
-// Function to add subscribe text to posts and pages
-function subscribe_link_shortcode() {
+
+function shortcode__ld_take_this_course_button() {
 	global $wp;
 
 	$return_value = null;
@@ -75,45 +75,26 @@ function subscribe_link_shortcode() {
 	$page_url = home_url( $wp->request );
 	$page_url_parts = explode( '/', $page_url );
 
-	$is_course_regx = '/courses\/.(\w|-)*\/?$/';
-	$is_course_page = preg_match( $is_course_regx, $page_url );
-
-	if ( $is_course_page ) {
+	if ( ld_is_course_page( $page_url ) ) {
 		$course_slug = $page_url_parts[sizeof($page_url_parts) - 1];
 
-		// if the user is logged out, take them to the registration page with
-		// a reference to the current course stored in the query string
+		// query string with course slug is to redirect the user after they've
+		// registered to the appropriate course-purchase-page
 		if ( !is_user_logged_in() ) {
 			$button_link = $link__register_page . '?course=' . $course_slug;
 			$button_text = 'Take This Course';
 		}
-		// if the user is logged in, we need to check and see whether or not
-		// they're already registered for the course.
+		else if ( ld_user_is_enrolled_in_course( $course_slug ) ) {
+			$button_text = 'Already Enrolled';
+			$button_link = '#';
+			$button_class = 'disabled';
+		}
 		else {
-			global $wpdb;
-
-			$id__current_user = get_current_user_id();
-			$id__current_course = $wpdb->get_var( "SELECT ID FROM wp_posts WHERE post_type = 'sfwd-courses' AND post_name = '$course_slug';" );
-
-			$course_data__serialized = $wpdb->get_var( "SELECT meta_value FROM wp_postmeta WHERE meta_key = '_sfwd-courses' AND post_id = $id__current_course" );
-			$course_data__unserialized = maybe_unserialize( $course_data__serialized );
-			
-			$id__course_access_list = explode( ',', $course_data__unserialized['sfwd-courses_course_access_list'] );
-
-			$is_enrolled = in_array($id__current_user, $id__course_access_list);
-
-			if ($is_enrolled) {
-				$button_text = 'Already Enrolled';
-				$button_link = '#';
-				$button_class = 'disabled';
-			}
-			else {
-				$button_text = 'Take This Course';
-				$button_link = 'https://google.com';
-			}
+			$button_text = 'Take This Course';
+			$button_link = 'https://google.com';
 		}
 	}
 
 	return "<a class='btn-join $button_class' href='$button_link'>$button_text</a>";
 }
-add_shortcode('subscribe', 'subscribe_link_shortcode');
+add_shortcode('take_course_button', 'shortcode__ld_take_this_course_button');
