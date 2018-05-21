@@ -1,0 +1,16 @@
+/*
+Theme Name:     Astrai-child
+Theme URI:      
+Description:    Astra child theme.
+Author:         Me
+Author URI:     
+Template:       astra
+Version:        0.1.0
+*/
+
+
+.disabled {
+  opacity: .5 !important;
+  pointer-events: none !important;
+  background-color: #555 !important;
+}
