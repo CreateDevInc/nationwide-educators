@@ -6,7 +6,7 @@
  * @param string $course_slug - the slug for the course you wish to check enrollment for (e.g. 'drug-addiction')
  * @return boolean
  */
-if (!function_exists('ld_user_is_enrolled_in_course')) {
+if ( !function_exists( 'ld_user_is_enrolled_in_course' ) ) {
     function ld_user_is_enrolled_in_course($course_slug) {
 			global $wpdb;
 
@@ -24,11 +24,21 @@ if (!function_exists('ld_user_is_enrolled_in_course')) {
     }
 }
 
-if (!function_exists('ld_is_course_page')) {
+if ( !function_exists( 'ld_is_course_page' ) ) {
 	function ld_is_course_page($page_url) {
 		$is_course_regx = '/courses\/.(\w|-)*\/?$/';
 		$is_course_page = preg_match( $is_course_regx, $page_url );
 
 		return $is_course_page;
+	}
+}
+
+if ( !function_exists( "ld_get_courses" ) ) { 
+	function ld_get_courses() {
+		global $wpdb;
+
+		$courses = $wpdb->get_results( 'SELECT post_name, post_title from wp_posts WHERE post_type = "sfwd-courses"' );
+
+		return $courses;
 	}
 }
