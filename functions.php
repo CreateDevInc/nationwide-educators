@@ -7,8 +7,6 @@
  * @package astrai-child
  */
 
- // testing ssh
-
 // Assumptions:
 // - When creating a course, that course should have the same slug across all pages
 
@@ -23,43 +21,6 @@ function astra_parent_theme_enqueue_styles() {
 		array( 'astra-style' )
 	);
 }
-
-
-// Change the logo on the login page
-function my_login_logo() { ?>
-    <style type="text/css">
-        #login h1 a, .login h1 a {
-		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/login-logo.png);
-		height: 100px;
-		width: 130px;
-		background-size: 80px 80px;
-		background-repeat: no-repeat;
-		background-position: center center;
-		padding-bottom: 30px;
-        }
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
-
-// Override the "Register" link on the login page
-function wpse127636_register_url($link){
-    return str_replace(site_url('wp-login.php?action=register', 'login'),site_url('register'),$link);
-}
-add_filter('register','wpse127636_register_url');
-
-// Redirect from "Register" page to custom register page
-function wpse127636_fix_register_urls($url, $path, $orig_scheme){
-    if ($orig_scheme !== 'login')
-        return $url;
-
-    if ($path == 'wp-login.php?action=register')
-        return site_url('register', 'login');
-
-    return $url;
-}
-add_filter('site_url', 'wpse127636_fix_register_urls', 10, 3);
-
 
 function shortcode__ld_take_this_course_button() {
 	global $wp;
