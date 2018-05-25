@@ -50,3 +50,9 @@ Version:        0.1.0
   content: "";
   clear: both;
   display: table; }
+
+.logged-in-header h5 {
+  color: #fff;
+  padding: 10px;
+  font-size: 17px;
+  background-color: #0274be; }

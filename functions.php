@@ -9,7 +9,7 @@
 
 // Assumptions:
 // - When creating a course, that course should have the same slug across all pages
-
+$user = get_current_user();
 $permalink__course = 'courses';
 $permalink__course_enrollment = 'enroll';
 
@@ -67,3 +67,16 @@ function redirect_from_register_page() {
 	}
 }
 add_action( 'wp', 'redirect_from_register_page' );
+
+function logged_in_header() {
+	if ( is_user_logged_in() ) {
+		// var_dump( wp_get_current_user() );
+		$username = wp_get_current_user()->user_login;
+		?>
+			<div class="logged-in-header">
+			<h5><b><?php echo $username; ?></b></h5>
+			</div>
+		<?php
+	}
+}
+add_action( 'astra_header_before', 'logged_in_header' );
