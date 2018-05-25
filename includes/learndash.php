@@ -97,3 +97,22 @@ if ( !function_exists( "ld_list_courses" ) ) {
 		return $html_string;
 	}
 }
+
+if ( !function_exists( "ld_get_course_page" ) ) { 
+	function ld_get_course_page( $course_slug ) {
+		global $permalink__course;
+		$site_url = get_site_url();
+
+		return "$site_url/$permalink__course/$course_slug";
+	}
+}
+
+if ( !function_exists( "ld_get_course_enrollment_page" ) ) { 
+	function ld_get_course_enrollment_page( $course_slug ) {
+		global $permalink__course_enrollment;
+		$site_url = get_site_url();
+
+		return "$site_url/$permalink__course_enrollment/$course_slug";
+	}
+}
+

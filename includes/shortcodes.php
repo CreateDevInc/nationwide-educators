@@ -17,6 +17,7 @@
  */
 function shortcode__ld_take_this_course_button() {
 	global $wp;
+	global $permalink__course_enrollment;
 
 	$return_value = null;
 
@@ -43,7 +44,7 @@ function shortcode__ld_take_this_course_button() {
 		}
 		else {
 			$button_text = 'Take This Course';
-			$button_link = 'https://google.com';
+			$button_link = ld_get_course_enrollment_page( $course_slug );
 		}
 	}
 

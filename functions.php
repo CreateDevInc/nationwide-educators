@@ -10,8 +10,8 @@
 // Assumptions:
 // - When creating a course, that course should have the same slug across all pages
 
-$permalink__course_enrollment = 'enroll';
 $permalink__course = 'courses';
+$permalink__course_enrollment = 'enroll';
 
 include_once STYLESHEETPATH . '/includes/widgets.php';
 include_once STYLESHEETPATH . '/includes/shortcodes.php';
