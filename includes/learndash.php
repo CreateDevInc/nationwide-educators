@@ -50,7 +50,7 @@ if ( !function_exists( "ld_list_courses" ) ) {
 		$html_string = '';
 
 		if ( $config['list_wrapper'] ) {
-			$html_string .= $config['list_wrapper']['start'];
+			$html_string .= $config['list_wrapper'][0];
 		}
 
 		foreach ( $courses as $course ) {
@@ -59,27 +59,39 @@ if ( !function_exists( "ld_list_courses" ) ) {
 			$course_link = "$site_url/$permalink__course/$course_name";
 
 			if ( $config['course_wrapper'] ) {
-				$html_string .= $config['course_wrapper']['start'];
+				$html_string .= $config['course_wrapper'][0];
 			}
 
-			if ( $config['include_thumbnail']) {
+			if ( $config['include_thumbnail'] ) {
 				$html_string .= '<div class="course">';
 				$html_string .= get_the_post_thumbnail( $course->ID );
 			}
 
-			$html_string .= "<a href='$course_link'>$course->post_title</a>";
+			$html_string .= "<a href='$course_link'>";
+
+			if ( $config['text_wrapper'] ) {
+				$html_string .= $config['text_wrapper'][0];
+			}
+
+			$html_string .= $course->post_title;
+
+			if ( $config['text_wrapper'] ) {
+				$html_string .= $config['text_wrapper'][1];
+			}
+
+			$html_string .= "</a>";
 
 			if ( $config['include_thumbnail']) {
 				$html_string .= '</div>';
 			}
 
 			if ( $config['course_wrapper'] ) {
-				$html_string .= $config['course_wrapper']['end'];
+				$html_string .= $config['course_wrapper'][1];
 			}
 		}
 
 		if ( $config['list_wrapper'] ) {
-			$html_string .= $config['list_wrapper']['end'];
+			$html_string .= $config['list_wrapper'][1];
 		}
 
 		return $html_string;
