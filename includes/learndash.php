@@ -37,8 +37,51 @@ if ( !function_exists( "ld_get_courses" ) ) {
 	function ld_get_courses() {
 		global $wpdb;
 
-		$courses = $wpdb->get_results( 'SELECT post_name, post_title from wp_posts WHERE post_type = "sfwd-courses"' );
+		$courses = $wpdb->get_results( 'SELECT ID, post_name, post_title from wp_posts WHERE post_type = "sfwd-courses"' );
 
 		return $courses;
+	}
+}
+
+if ( !function_exists( "ld_list_courses" ) ) { 
+	function ld_list_courses( $config ) {
+		$courses = ld_get_courses();
+		$site_url = get_site_url();
+		$html_string = '';
+
+		if ( $config['list_wrapper'] ) {
+			$html_string .= $config['list_wrapper']['start'];
+		}
+
+		foreach ( $courses as $course ) {
+			$course_name = $course->post_name;
+			$course_title = $course->post_title;
+			$course_link = "$site_url/$permalink__course/$course_name";
+
+			if ( $config['course_wrapper'] ) {
+				$html_string .= $config['course_wrapper']['start'];
+			}
+
+			if ( $config['include_thumbnail']) {
+				$html_string .= '<div class="course">';
+				$html_string .= get_the_post_thumbnail( $course->ID );
+			}
+
+			$html_string .= "<a href='$course_link'>$course->post_title</a>";
+
+			if ( $config['include_thumbnail']) {
+				$html_string .= '</div>';
+			}
+
+			if ( $config['course_wrapper'] ) {
+				$html_string .= $config['course_wrapper']['end'];
+			}
+		}
+
+		if ( $config['list_wrapper'] ) {
+			$html_string .= $config['list_wrapper']['end'];
+		}
+
+		return $html_string;
 	}
 }

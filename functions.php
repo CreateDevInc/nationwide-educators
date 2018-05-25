@@ -7,10 +7,15 @@
  * @package astrai-child
  */
 
+
+$permalink__course_enrollment = 'enroll';
+$permalink__course = 'courses';
+
 // Assumptions:
 // - When creating a course, that course should have the same slug across all pages
 
 include_once STYLESHEETPATH . '/includes/learndash.php' ;
+
 
 add_action( 'wp_enqueue_scripts', 'astra_parent_theme_enqueue_styles' );
 
@@ -60,6 +65,13 @@ function shortcode__ld_take_this_course_button() {
 }
 add_shortcode('take_course_button', 'shortcode__ld_take_this_course_button');
 
+
+function shortcode__ld_course_list() {
+	echo ld_list_courses( array( 'include_thumbnail' => true ) );
+}
+add_shortcode( 'list_courses', 'shortcode__ld_course_list' );
+
+
 class ld_course_list extends WP_Widget {
 	public function __construct() {
 		$widget_options = array( 
@@ -69,15 +81,7 @@ class ld_course_list extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$site = get_site_url();
-		$courses = ld_get_courses();
-
-		foreach( $courses as $course ) {
-			$site_url = get_site_url();
-			$course_link = "$site_url/courses/" . $course->post_name;
-			$course_title = $course->post_title;
-			echo "<a href='$course_link'>$course->post_title</a>";
-		}
+		echo ld_list_courses();
 	}
 }
 
