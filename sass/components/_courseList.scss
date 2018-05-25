@@ -1,12 +1,18 @@
+@import '../variables';
+
 .course_list {
-  margin: 20px 0;
+  margin: 40px 0;
   margin-bottom: 63px;
+
+  display: flex;
+  justify-content: center;
 
   .course {
     width: 100%;
     max-width: 300px;
-    float: left;
+    // float: left;
     position: relative;
+    margin: 0 25px;
   }
 
   a {
@@ -28,7 +34,7 @@
     bottom: -43px;
     left: 0;
     padding: 5px 10px;
-    background-color: lightblue;
+    background-color: $color-complement;
     width: 100%;
   }
 }
