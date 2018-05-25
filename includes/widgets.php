@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * A widget that shows a basic list of all links to the site courses. Primarily
+ * used in the main navigation menu to automatically update the menu as new
+ * courses are created or removed.
+ */
 class ld_course_list extends WP_Widget {
 	public function __construct() {
 		$widget_options = array( 
