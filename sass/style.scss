@@ -1,0 +1,23 @@
+/*
+Theme Name:     Astrai-child
+Theme URI:      
+Description:    Astra child theme.
+Author:         Me
+Author URI:     
+Template:       astra
+Version:        0.1.0
+*/
+
+@import 'states';
+@import 'components/courseList';
+
+.btn-join {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
