@@ -48,7 +48,7 @@ add_filter( 'query_vars', 'add_query_vars_filter' );
  *
  * @return void
  */
-function redirect_from_register_page() {
+function ld_redirect_actions() {
 	global $wp;
 
 	$course = get_query_var( 'course' );
@@ -57,26 +57,33 @@ function redirect_from_register_page() {
 	$is_logged_in = is_user_logged_in();
 	$is_register_page = is_register_page( $current_url );
 
-	if ( $is_logged_in && $is_register_page && $course ) {
-		wp_redirect( ld_get_course_enrollment_page( $course ) );
-		exit();
-	}
-	else if ( $is_logged_in && $is_register_page ) {
-		wp_redirect( get_site_url() );
-		exit();
-	}
+  if ( $is_logged_in ) {
+    if ( $is_register_page && $course ) {
+      wp_redirect( ld_get_course_enrollment_page( $course ) );
+      exit();
+    }
+    else if ( $is_register_page ) {
+      wp_redirect( get_site_url() );
+      exit();
+    }
+    else if ( is_front_page() ) {
+      wp_redirect( get_site_url() . '/profile' );
+      exit();
+    }
+  }
 }
-add_action( 'wp', 'redirect_from_register_page' );
+add_action( 'wp', 'ld_redirect_actions' );
 
 function logged_in_header() {
-	if ( is_user_logged_in() ) {
-		// var_dump( wp_get_current_user() );
-		$username = wp_get_current_user()->user_login;
-		?>
-			<div class="logged-in-header">
-			<h5><b><?php echo $username; ?></b></h5>
-			</div>
-		<?php
+	if ( is_user_logged_in() ) { ?>
+    <div class="logged-in-header">
+    <h5>
+      <b>
+        <?php echo wp_get_current_user()->user_login; ?>
+      </b>
+    </h5>
+    </div>
+  <?php
 	}
 }
 add_action( 'astra_header_before', 'logged_in_header' );
