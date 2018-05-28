@@ -22,8 +22,7 @@ function shortcode__ld_take_this_course_button() {
 	$return_value = null;
 
 	$button_link = '#';
-	$button_text = '#';
-	$button_class = '';
+	$button_text = 'Take This Course';
 
 	$link__register_page = get_site_url() . '/register';
 
@@ -38,9 +37,7 @@ function shortcode__ld_take_this_course_button() {
 			$button_text = 'Take This Course';
 		}
 		else if ( ld_user_is_enrolled_in_course( $course_slug ) ) {
-			$button_text = 'Already Enrolled';
-			$button_link = '#';
-			$button_class = 'disabled';
+      return;
 		}
 		else {
 			$button_text = 'Take This Course';
@@ -48,7 +45,7 @@ function shortcode__ld_take_this_course_button() {
 		}
 	}
 
-	return "<a class='btn-join $button_class' href='$button_link'>$button_text</a>";
+	return "<a class='btn-join' href='$button_link'>$button_text</a>";
 }
 add_shortcode('take_course_button', 'shortcode__ld_take_this_course_button');
 
