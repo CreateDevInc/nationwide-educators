@@ -55,6 +55,7 @@ function ld_redirect_actions() {
 	$current_url = home_url( $wp->request );
 
 	$is_logged_in = is_user_logged_in();
+  $is_account_page = is_account_page( $current_url );
 	$is_register_page = is_register_page( $current_url );
 
   if ( $is_logged_in ) {
@@ -66,6 +67,10 @@ function ld_redirect_actions() {
       wp_redirect( get_site_url() );
       exit();
     }
+    /* else if ( $is_account_page ) { */
+    /*   wp_redirect( get_site_url() . '/account/edit-account' ); */
+    /*   exit(); */
+    /* } */
     else if ( is_front_page() ) {
       wp_redirect( get_site_url() . '/profile' );
       exit();
