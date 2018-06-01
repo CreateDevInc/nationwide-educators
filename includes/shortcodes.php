@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Outputs a button that does different things depending on the
  * user who is viewing it:

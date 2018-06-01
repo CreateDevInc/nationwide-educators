@@ -17,6 +17,7 @@ include_once STYLESHEETPATH . '/includes/utils.php';
 include_once STYLESHEETPATH . '/includes/widgets.php';
 include_once STYLESHEETPATH . '/includes/shortcodes.php';
 include_once STYLESHEETPATH . '/includes/learndash.php';
+include_once STYLESHEETPATH . '/includes/woocommerce.php';
 
 add_action( 'wp_enqueue_scripts', 'astra_parent_theme_enqueue_styles' );
 
@@ -92,3 +93,4 @@ function logged_in_header() {
 	}
 }
 add_action( 'astra_header_before', 'logged_in_header' );
+ 
