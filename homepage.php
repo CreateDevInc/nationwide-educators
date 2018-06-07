@@ -7,14 +7,14 @@
 get_header(); ?>
 
   <style>
-    .hero {
-      background-image: url("<?php the_field('hero-image'); ?>");
+    .hero-section {
+      background-image: url("<?php echo get_field('hero-image'); ?>");
     }
   </style>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
 
-    <div class="hero">
+    <div class="hero-section">
       <div class="overlay"></div>
       <div class="text">
         <h1><?php the_field('hero-primary-text') ?></h1>
@@ -23,7 +23,18 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="icons">
+    <div class="course-section">
+      <h1>Course Selection</h1>
+      <?php
+        echo ld_list_courses( array( 
+          'include_thumbnail' => true,
+          'list_wrapper' => array( '<div class="course_list clearfix">', '</div>' ),
+          'text_wrapper' => array( '<span>', '</span>' )
+        ) ); 
+      ?>
+    </div>
+
+    <div class="icons-section">
       <h1><?php the_field('icon-primary-text') ?></h1>
       <h3><?php the_field('icon-secondary-text') ?></h3>
       <div class="flex">
@@ -59,14 +70,6 @@ get_header(); ?>
 
       </div>
     </div>
-
-    <?php
-      echo ld_list_courses( array( 
-        'include_thumbnail' => true,
-        'list_wrapper' => array( '<div class="course_list clearfix">', '</div>' ),
-        'text_wrapper' => array( '<span>', '</span>' )
-      ) ); 
-    ?>
 
 	</div>
 
