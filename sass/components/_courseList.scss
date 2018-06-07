@@ -5,13 +5,13 @@
   margin-bottom: 63px;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   .course {
     width: 100%;
     max-width: 300px;
     position: relative;
-    margin: 0 25px;
+    margin: 0 35px 0 0;
   }
 
   a {

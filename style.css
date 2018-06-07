@@ -17,12 +17,12 @@ Version:        0.1.0
   margin: 40px 0;
   margin-bottom: 63px;
   display: flex;
-  justify-content: center; }
+  justify-content: flex-start; }
   .course_list .course {
     width: 100%;
     max-width: 300px;
     position: relative;
-    margin: 0 25px; }
+    margin: 0 35px 0 0; }
   .course_list a {
     display: block;
     position: absolute;
@@ -53,16 +53,16 @@ Version:        0.1.0
   .main-header-bar .widget-area a {
     color: #000; }
 
-h1, h3 {
+.hero-section h1, .hero-section h3, .icons-section h1, .icons-section h3 {
   color: #fff; }
 
-.hero {
+.hero-section {
   width: 100%;
   height: 100vh;
   position: relative;
   max-height: 600px;
   background-size: cover; }
-  .hero .overlay {
+  .hero-section .overlay {
     top: 0;
     left: 0;
     width: 100%;
@@ -70,33 +70,36 @@ h1, h3 {
     z-index: 2;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3); }
-  .hero .text {
+  .hero-section .text {
     left: 50px;
     bottom: 50px;
     z-index: 3;
     position: absolute; }
-  .hero .button {
+  .hero-section .button {
     font-size: 20px; }
 
-.icons {
+.course-section {
+  padding: 50px; }
+
+.icons-section {
   padding: 50px;
   background-color: #22b373; }
-  .icons i {
+  .icons-section i {
     color: #fff;
     font-size: 80px; }
-  .icons div h3 {
+  .icons-section div h3 {
     margin-top: 15px;
     text-align: center; }
-  .icons .flex-column i {
+  .icons-section .flex-column i {
     font-size: 40px;
     margin-bottom: 84px; }
-  .icons .flex {
+  .icons-section .flex {
     width: 100%;
     margin: 50px auto;
     display: flex;
     max-width: 1100px;
     justify-content: space-around; }
-  .icons .circle {
+  .icons-section .circle {
     width: 250px;
     height: 250px;
     border-radius: 100%;
@@ -108,30 +111,30 @@ h1, h3 {
     text-align: center; }
 
 @media screen and (max-width: 1070px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 210px;
     height: 210px; }
-  .icons .flex-column {
+  .icons-section .flex-column {
     display: none; } }
 
 @media screen and (max-width: 935px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 150px;
     height: 150px; }
-  .icons h3 {
+  .icons-section h3 {
     font-size: 20px; } }
 
 @media screen and (max-width: 635px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 210px;
     height: 210px; }
-  .icons .flex {
+  .icons-section .flex {
     display: block; }
-  .icons .flex > div {
+  .icons-section .flex > div {
     margin: 55px 0; } }
 
 @media screen and (max-width: 500px) {
-  .hero .text {
+  .hero-section .text {
     width: 90%;
     left: 5%; } }
 

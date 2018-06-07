@@ -1,12 +1,14 @@
 $homepage-content-spacing: 50px;
 
-h1, h3 {
-  color: #fff; 
+.hero-section, .icons-section {
+  h1, h3 {
+    color: #fff;
+  }
 }
 
 // The entire section that constitues
 // the hero image, its text, and its buttons
-.hero {
+.hero-section {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -35,10 +37,16 @@ h1, h3 {
   }
 }
 
+// The section with the list of the courses offered
+// by Nationwide.
+.course-section {
+  padding: $homepage-content-spacing;
+}
+
 
 // The section with the three icons and text underneath
 // them.
-.icons {
+.icons-section {
   padding: $homepage-content-spacing;
   background-color: $color-complement;
 
@@ -81,41 +89,41 @@ h1, h3 {
 }
 
 @media screen and (max-width: 1070px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 210px;
     height: 210px;
   }
-  .icons .flex-column {
+  .icons-section .flex-column {
     display: none;
   }
 }
 
 @media screen and (max-width: 935px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 150px;
     height: 150px;
   }
 
-  .icons h3 {
+  .icons-section h3 {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 635px) {
-  .icons .circle {
+  .icons-section .circle {
     width: 210px;
     height: 210px;
   }
-  .icons .flex {
+  .icons-section .flex {
     display: block;
   }
-  .icons .flex > div {
+  .icons-section .flex > div {
     margin: 55px 0;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .hero .text {
+  .hero-section .text {
     width: 90%;
     left: 5%;
   }
