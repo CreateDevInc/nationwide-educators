@@ -1,0 +1,17 @@
+@import '../variables';
+
+.main-header-bar {
+  background-color: $color-complement;
+
+  &, .site-title a, .main-header-menu a {
+    color: #fff;
+  }
+
+  .site-title a {
+    @include header_font();
+  }
+
+  .widget-area a {
+    color: #000;
+  }
+}

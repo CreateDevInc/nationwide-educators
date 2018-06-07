@@ -7,6 +7,7 @@ Author URI:
 Template:       astra
 Version:        0.1.0
 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700");
 .disabled {
   opacity: .5 !important;
   pointer-events: none !important;
@@ -39,8 +40,123 @@ Version:        0.1.0
     bottom: -43px;
     left: 0;
     padding: 5px 10px;
-    background-color: #0274be;
+    background-color: #22b373;
     width: 100%; }
+
+.main-header-bar {
+  background-color: #22b373; }
+  .main-header-bar, .main-header-bar .site-title a, .main-header-bar .main-header-menu a {
+    color: #fff; }
+  .main-header-bar .site-title a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; }
+  .main-header-bar .widget-area a {
+    color: #000; }
+
+h1, h3 {
+  color: #fff; }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  max-height: 600px;
+  background-size: cover; }
+  .hero .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .hero .text {
+    left: 50px;
+    bottom: 50px;
+    z-index: 3;
+    position: absolute; }
+  .hero .button {
+    font-size: 20px; }
+
+.icons {
+  padding: 50px;
+  background-color: #22b373; }
+  .icons i {
+    color: #fff;
+    font-size: 80px; }
+  .icons div h3 {
+    margin-top: 15px;
+    text-align: center; }
+  .icons .flex-column i {
+    font-size: 40px;
+    margin-bottom: 84px; }
+  .icons .flex {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    max-width: 1100px;
+    justify-content: space-around; }
+  .icons .circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; }
+
+@media screen and (max-width: 1070px) {
+  .icons .circle {
+    width: 210px;
+    height: 210px; }
+  .icons .flex-column {
+    display: none; } }
+
+@media screen and (max-width: 935px) {
+  .icons .circle {
+    width: 150px;
+    height: 150px; }
+  .icons h3 {
+    font-size: 20px; } }
+
+@media screen and (max-width: 635px) {
+  .icons .circle {
+    width: 210px;
+    height: 210px; }
+  .icons .flex {
+    display: block; }
+  .icons .flex > div {
+    margin: 55px 0; } }
+
+@media screen and (max-width: 500px) {
+  .hero .text {
+    width: 90%;
+    left: 5%; } }
+
+.button {
+  color: #fff;
+  margin: 10px 0;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #22b373; }
+  .button:hover {
+    background-color: #198c59; }
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .btn-join {
   display: block;
@@ -55,4 +171,4 @@ Version:        0.1.0
   color: #fff;
   padding: 10px;
   font-size: 17px;
-  background-color: #0274be; }
+  background-color: #22b373; }

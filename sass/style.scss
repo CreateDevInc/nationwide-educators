@@ -8,9 +8,29 @@ Template:       astra
 Version:        0.1.0
 */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
+
 @import 'states';
 @import 'variables';
 @import 'components/courseList';
+@import 'components/header';
+@import 'components/homepage';
+@import 'components/button';
+
+h1 {
+  @include header_font();
+  text-transform: uppercase;
+}
+
+h3 {
+  @include light_header_font();
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .btn-join {
   display: block;

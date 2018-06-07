@@ -1,1 +1,11 @@
-$color-complement: #0274be;
+$color-complement: #22b373;
+$color-complement-dark: #198c59;
+
+@mixin header_font() {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+@mixin light_header_font() {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
