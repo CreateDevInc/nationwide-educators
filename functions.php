@@ -26,6 +26,9 @@ function astra_parent_theme_enqueue_styles() {
 		get_stylesheet_directory_uri() . '/style.css',
 		array( 'astra-style' )
 	);
+  wp_enqueue_style( 'font-awesome',
+    'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+  );
 }
 
 /**
