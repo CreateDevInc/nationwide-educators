@@ -6,13 +6,59 @@
 
 get_header(); ?>
 
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
-
-	<?php get_sidebar(); ?>
-
-<?php endif ?>
+  <style>
+    .hero {
+      background-image: url("<?php the_field('hero-image'); ?>");
+    }
+  </style>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
+
+    <div class="hero">
+      <div class="overlay"></div>
+      <div class="text">
+        <h1><?php the_field('hero-primary-text') ?></h1>
+        <h3><?php the_field('hero-secondary-text') ?></h3>
+        <a href="#courses" class="button"><?php the_field('hero-button-text') ?></a>
+      </div>
+    </div>
+
+    <div class="icons">
+      <h1><?php the_field('icon-primary-text') ?></h1>
+      <h3><?php the_field('icon-secondary-text') ?></h3>
+      <div class="flex">
+
+        <div>
+          <div class="circle">
+            <i class="fas fa-pen-square"></i>
+          </div>
+          <h3><?php the_field('icon-1-text') ?></h3>
+        </div>
+
+        <div class="flex-column">
+          <i class="fas fa-arrow-alt-circle-right"></i>
+        </div>
+
+        <div>
+          <div class="circle">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3><?php the_field('icon-2-text') ?></h3>
+        </div>
+
+        <div class="flex-column">
+          <i class="fas fa-arrow-alt-circle-right"></i>
+        </div>
+
+        <div>
+          <div class="circle">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3><?php the_field('icon-3-text') ?></h3>
+        </div>
+
+      </div>
+    </div>
 
     <?php
       echo ld_list_courses( array( 
@@ -22,12 +68,6 @@ get_header(); ?>
       ) ); 
     ?>
 
-	</div><!-- #primary -->
-
-<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
-
-	<?php get_sidebar(); ?>
-
-<?php endif ?>
+	</div>
 
 <?php get_footer(); ?>
