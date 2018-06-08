@@ -17,7 +17,7 @@ Version:        0.1.0
 @import 'components/homepage';
 @import 'components/button';
 @import 'components/coursePages';
-@import 'components/loginPage';
+@import 'components/loginRegisterPages';
 
 h1 { @include header_font(); }
 h3 { @include light_header_font(); }
