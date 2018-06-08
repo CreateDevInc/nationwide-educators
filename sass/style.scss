@@ -18,6 +18,7 @@ Version:        0.1.0
 @import 'components/button';
 @import 'components/coursePages';
 @import 'components/loginRegisterPages';
+@import 'components/profilePage';
 
 h1 { @include header_font(); }
 h3 { @include light_header_font(); }
@@ -34,6 +35,10 @@ a:hover { color: $color-complement-dark; }
 .btn-join {
   display: block;
   margin: 0 0 20px 0;
+}
+
+input[type="button"] {
+  background-color: $color-complement;
 }
 
 .clearfix::after {

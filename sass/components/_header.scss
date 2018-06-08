@@ -8,8 +8,18 @@
   // color on certain screen widths
   border-bottom-width: 0px !important;
 
-  &, .site-title a, .main-header-menu a {
+  .site-title a {
     color: #fff;
+  }
+
+  .main-header-menu a {
+    color: #000;
+  }
+
+  @media screen and (min-width: 921px) {
+    .main-header-menu a {
+      color: #fff;
+    }
   }
 
   // Navigation
@@ -22,6 +32,8 @@
     color: #fff;
   }
 
+  .widget-area a,
+  .main-header-menu .sub-menu a,
   #primary-menu .sub-menu a:hover {
     color: #000;
   }
@@ -31,9 +43,6 @@
     @include header_font();
   }
 
-  .widget-area a {
-    color: #000;
-  }
 
   .ast-mobile-menu-buttons .menu-toggle {
     background-color: $color-complement-dark;

@@ -54,20 +54,25 @@ Version:        0.1.0
 .main-header-bar {
   background-color: #6280a2;
   border-bottom-width: 0px !important; }
-  .main-header-bar, .main-header-bar .site-title a, .main-header-bar .main-header-menu a {
+  .main-header-bar .site-title a {
     color: #fff; }
+  .main-header-bar .main-header-menu a {
+    color: #000; }
+  @media screen and (min-width: 921px) {
+    .main-header-bar .main-header-menu a {
+      color: #fff; } }
   .main-header-bar .main-header-menu a {
     font-size: 18px;
     position: relative; }
   .main-header-bar #primary-menu a:hover {
     color: #fff; }
+  .main-header-bar .widget-area a,
+  .main-header-bar .main-header-menu .sub-menu a,
   .main-header-bar #primary-menu .sub-menu a:hover {
     color: #000; }
   .main-header-bar .site-title a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; }
-  .main-header-bar .widget-area a {
-    color: #000; }
   .main-header-bar .ast-mobile-menu-buttons .menu-toggle {
     background-color: #3e5977; }
 
@@ -308,6 +313,15 @@ body #learndash_lessons #lesson_heading {
 #lostpasswordform::before {
   content: "Reset Password"; }
 
+body dd.course_progress div.course_progress_blue,
+body #learndash_profile .learndash_profile_heading,
+body #learndash_profile .learndash_profile_quiz_heading {
+  background-color: #6280a2; }
+
+.certificate_icon_large, .learndash .completed:before,
+.learndash .completed:before, #learndash_profile .completed:before, .learndash_topic_dots ul .topic-completed span:before, .learndash_navigation_lesson_topics_list .topic-completed span:before, .learndash_navigation_lesson_topics_list ul .topic-completed span:before, .learndash .topic-completed span:before, body .list_arrow.lesson_completed:before {
+  color: #6280a2; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }
@@ -330,6 +344,9 @@ a:hover {
 .btn-join {
   display: block;
   margin: 0 0 20px 0; }
+
+input[type="button"] {
+  background-color: #6280a2; }
 
 .clearfix::after {
   content: "";
