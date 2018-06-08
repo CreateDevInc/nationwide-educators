@@ -15,7 +15,7 @@ Version:        0.1.0
 
 .course_list {
   margin: 40px 0;
-  margin-bottom: 63px;
+  margin-bottom: 73px;
   display: flex;
   justify-content: flex-start; }
   .course_list .course {
@@ -35,26 +35,45 @@ Version:        0.1.0
     height: 100%;
     font-size: 18px; }
   .course_list span {
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    left: 0;
+    padding: 10px 15px;
     display: block;
     position: absolute;
-    bottom: -43px;
-    left: 0;
-    padding: 5px 10px;
-    background-color: #22b373;
-    width: 100%; }
+    bottom: -53px;
+    width: 100%;
+    background-color: #6280a2; }
+  .course_list a:hover span {
+    color: #fff;
+    background-color: #3e5977; }
 
 .main-header-bar {
-  background-color: #22b373; }
+  background-color: #6280a2;
+  border-bottom-width: 0px !important; }
   .main-header-bar, .main-header-bar .site-title a, .main-header-bar .main-header-menu a {
     color: #fff; }
+  .main-header-bar .main-header-menu a {
+    font-size: 18px;
+    position: relative; }
+  .main-header-bar #primary-menu a:hover {
+    color: #fff; }
+  .main-header-bar #primary-menu .sub-menu a:hover {
+    color: #000; }
   .main-header-bar .site-title a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; }
   .main-header-bar .widget-area a {
     color: #000; }
+  .main-header-bar .ast-mobile-menu-buttons .menu-toggle {
+    background-color: #3e5977; }
 
 .hero-section h1, .hero-section h3, .icons-section h1, .icons-section h3 {
-  color: #fff; }
+  color: #fff;
+  text-transform: uppercase; }
 
 .hero-section {
   width: 100%;
@@ -83,7 +102,7 @@ Version:        0.1.0
 
 .icons-section {
   padding: 50px;
-  background-color: #22b373; }
+  background-color: #6280a2; }
   .icons-section i {
     color: #fff;
     font-size: 80px; }
@@ -143,18 +162,165 @@ Version:        0.1.0
   margin: 10px 0;
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  background-color: #22b373; }
+  background-color: #6280a2; }
   .button:hover {
-    background-color: #198c59; }
+    background-color: #3e5977; }
+
+.learndash_content .btn-join,
+body #learndash_lessons #lesson_heading {
+  background-color: #6280a2; }
+
+.learndash_content .btn-join:hover {
+  background-color: #3e5977; }
+
+.uo_loginForm,
+.ur-frontend-form,
+.already-have-account {
+  width: 100%;
+  margin: auto;
+  display: block;
+  max-width: 400px;
+  padding: 0;
+  border: 0; }
+
+#loginform,
+#lostpasswordform,
+.ur-frontend-form {
+  position: relative;
+  margin-top: 70px; }
+
+#loginform::before,
+#lostpasswordform::before,
+.ur-frontend-form::before {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 25px;
+  width: 100%;
+  text-align: center; }
+
+.ur-frontend-form form,
+.uo_loginForm form {
+  width: 100%; }
+
+.ur-frontend-form form .ur-form-row .ur-form-grid,
+.uo_loginForm form .ur-form-row .ur-form-grid {
+  padding: 0; }
+
+.ur-frontend-form label,
+.ur-frontend-form h2,
+.uo_loginForm label,
+.uo_loginForm h2 {
+  display: none !important; }
+
+.ur-frontend-form #wp-submit,
+.ur-frontend-form .ur-submit-button,
+.uo_loginForm #wp-submit,
+.uo_loginForm .ur-submit-button {
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  width: 100%;
+  margin: auto !important;
+  display: block;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #6280a2;
+  padding: 10px 25px;
+  height: 47px !important; }
+
+.ur-frontend-form #wp-submit:hover,
+.uo_loginForm #wp-submit:hover {
+  background-color: #3e5977; }
+
+.ur-frontend-form .login-password,
+.ur-frontend-form .login-username,
+.ur-frontend-form .ur-form-grid > div,
+.ur-frontend-form #lostpasswordform > p:first-child,
+.uo_loginForm .login-password,
+.uo_loginForm .login-username,
+.uo_loginForm .ur-form-grid > div,
+.uo_loginForm #lostpasswordform > p:first-child {
+  position: relative; }
+  .ur-frontend-form .login-password input,
+  .ur-frontend-form .login-username input,
+  .ur-frontend-form .ur-form-grid > div input,
+  .ur-frontend-form #lostpasswordform > p:first-child input,
+  .uo_loginForm .login-password input,
+  .uo_loginForm .login-username input,
+  .uo_loginForm .ur-form-grid > div input,
+  .uo_loginForm #lostpasswordform > p:first-child input {
+    width: 100%;
+    height: auto !important;
+    padding: 30px 10.26px 10.26px 10.26px !important; }
+
+.ur-frontend-form .login-password::after,
+.ur-frontend-form .login-username::after,
+.ur-frontend-form .ur-form-grid > div::after,
+.ur-frontend-form #lostpasswordform > p:first-child::after,
+.uo_loginForm .login-password::after,
+.uo_loginForm .login-username::after,
+.uo_loginForm .ur-form-grid > div::after,
+.uo_loginForm #lostpasswordform > p:first-child::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6280a2;
+  font-size: 13px;
+  color: #fff;
+  padding: 0px 12px;
+  box-sizing: border-box; }
+
+.ur-frontend-form .field-user_login::after,
+.ur-frontend-form .login-username::after,
+.uo_loginForm .field-user_login::after,
+.uo_loginForm .login-username::after {
+  content: "Username"; }
+
+.ur-frontend-form .field-user_email::after,
+.ur-frontend-form #lostpasswordform > p:first-child::after,
+.uo_loginForm .field-user_email::after,
+.uo_loginForm #lostpasswordform > p:first-child::after {
+  content: "Email Address"; }
+
+.ur-frontend-form .field-user_pass::after,
+.ur-frontend-form .login-password::after,
+.uo_loginForm .field-user_pass::after,
+.uo_loginForm .login-password::after {
+  content: "Password"; }
+
+.ur-frontend-form .field-user_confirm_password::after,
+.uo_loginForm .field-user_confirm_password::after {
+  content: "Confirm Password"; }
+
+#loginform::before {
+  content: "Login"; }
+
+.ur-frontend-form::before {
+  content: "Create an account"; }
+
+#lostpasswordform::before {
+  content: "Reset Password"; }
 
 h1 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase; }
+  font-weight: 700; }
 
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300; }
+
+a {
+  color: #6280a2; }
+
+a:hover {
+  color: #3e5977; }
 
 .flex-column {
   display: flex;
@@ -174,4 +340,4 @@ h3 {
   color: #fff;
   padding: 10px;
   font-size: 17px;
-  background-color: #22b373; }
+  background-color: #6280a2; }

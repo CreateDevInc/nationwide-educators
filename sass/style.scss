@@ -16,15 +16,14 @@ Version:        0.1.0
 @import 'components/header';
 @import 'components/homepage';
 @import 'components/button';
+@import 'components/coursePages';
+@import 'components/loginPage';
 
-h1 {
-  @include header_font();
-  text-transform: uppercase;
-}
+h1 { @include header_font(); }
+h3 { @include light_header_font(); }
 
-h3 {
-  @include light_header_font();
-}
+a { color: $color-complement; }
+a:hover { color: $color-complement-dark; }
 
 .flex-column {
   display: flex;

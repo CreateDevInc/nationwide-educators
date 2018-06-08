@@ -2,7 +2,7 @@
 
 .course_list {
   margin: 40px 0;
-  margin-bottom: 63px;
+  margin-bottom: 73px;
 
   display: flex;
   justify-content: flex-start;
@@ -28,12 +28,20 @@
   }
   
   span {
+    @include transition(.2s, background-color);
+    @include light_header_font();
+
+    left: 0;
+    padding: 10px 15px;
     display: block;
     position: absolute;
-    bottom: -43px;
-    left: 0;
-    padding: 5px 10px;
-    background-color: $color-complement;
+    bottom: -53px;
     width: 100%;
+    background-color: $color-complement;
+  }
+
+  a:hover span {
+    color: #fff;
+    background-color: $color-complement-dark;
   }
 }

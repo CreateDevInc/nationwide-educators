@@ -3,15 +3,39 @@
 .main-header-bar {
   background-color: $color-complement;
 
+  // for some strange reason, Divi automatically
+  // gives the header a border width of 1px and a yellow
+  // color on certain screen widths
+  border-bottom-width: 0px !important;
+
   &, .site-title a, .main-header-menu a {
     color: #fff;
   }
 
+  // Navigation
+  .main-header-menu a {
+    font-size: 18px;
+    position: relative;
+  }
+
+  #primary-menu a:hover {
+    color: #fff;
+  }
+
+  #primary-menu .sub-menu a:hover {
+    color: #000;
+  }
+
+  // Logo
   .site-title a {
     @include header_font();
   }
 
   .widget-area a {
     color: #000;
+  }
+
+  .ast-mobile-menu-buttons .menu-toggle {
+    background-color: $color-complement-dark;
   }
 }

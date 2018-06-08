@@ -1,0 +1,11 @@
+@import '../variables';
+
+.learndash_content .btn-join,
+body #learndash_lessons #lesson_heading {
+  background-color: $color-complement;
+}
+
+
+.learndash_content .btn-join:hover {
+  background-color: $color-complement-dark;
+}
