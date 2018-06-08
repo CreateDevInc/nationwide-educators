@@ -70,10 +70,6 @@ function ld_redirect_actions() {
       wp_redirect( get_site_url() );
       exit();
     }
-    /* else if ( $is_account_page ) { */
-    /*   wp_redirect( get_site_url() . '/account/edit-account' ); */
-    /*   exit(); */
-    /* } */
     else if ( is_front_page() && user_can( get_current_user_id(), 'group_leader' )) {
       wp_redirect( get_site_url() . '/overview');
       exit();
