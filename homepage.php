@@ -19,12 +19,11 @@ get_header(); ?>
       <div class="text">
         <h1><?php the_field('hero-primary-text') ?></h1>
         <h3><?php the_field('hero-secondary-text') ?></h3>
-        <a href="#courses" class="button"><?php the_field('hero-button-text') ?></a>
+        <a href="<?php the_field('hero-button-link') ?>" class="button"><?php the_field('hero-button-text') ?></a>
       </div>
     </div>
 
     <div class="course-section">
-      <h1>Course Selection</h1>
       <?php
         echo ld_list_courses( array( 
           'include_thumbnail' => true,
