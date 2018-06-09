@@ -1,0 +1,12 @@
+@import '../variables';
+
+body dd.course_progress div.course_progress_blue,
+body #learndash_profile .learndash_profile_heading, 
+body #learndash_profile .learndash_profile_quiz_heading {
+  background-color: $color-complement;
+}
+
+.certificate_icon_large, .learndash .completed:before,
+.learndash .completed:before, #learndash_profile .completed:before, .learndash_topic_dots ul .topic-completed span:before, .learndash_navigation_lesson_topics_list .topic-completed span:before, .learndash_navigation_lesson_topics_list ul .topic-completed span:before, .learndash .topic-completed span:before, body .list_arrow.lesson_completed:before {
+  color: $color-complement;
+}

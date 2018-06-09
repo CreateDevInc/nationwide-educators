@@ -8,13 +8,37 @@ Template:       astra
 Version:        0.1.0
 */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
+
 @import 'states';
 @import 'variables';
 @import 'components/courseList';
+@import 'components/header';
+@import 'components/homepage';
+@import 'components/button';
+@import 'components/coursePages';
+@import 'components/loginRegisterPages';
+@import 'components/profilePage';
+
+h1 { @include header_font(); }
+h3 { @include light_header_font(); }
+
+a { color: $color-complement; }
+a:hover { color: $color-complement-dark; }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .btn-join {
   display: block;
   margin: 0 0 20px 0;
+}
+
+input[type="button"] {
+  background-color: $color-complement;
 }
 
 .clearfix::after {

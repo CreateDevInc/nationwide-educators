@@ -27,6 +27,9 @@ function astra_parent_theme_enqueue_styles() {
 		get_stylesheet_directory_uri() . '/style.css',
 		array( 'astra-style' )
 	);
+  wp_enqueue_style( 'font-awesome',
+    'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+  );
 }
 
 /**
@@ -68,10 +71,10 @@ function ld_redirect_actions() {
       wp_redirect( get_site_url() );
       exit();
     }
-    /* else if ( $is_account_page ) { */
-    /*   wp_redirect( get_site_url() . '/account/edit-account' ); */
-    /*   exit(); */
-    /* } */
+    else if ( is_front_page() && user_can( get_current_user_id(), 'group_leader' )) {
+      wp_redirect( get_site_url() . '/overview');
+      exit();
+    }
     else if ( is_front_page() ) {
       wp_redirect( get_site_url() . '/profile' );
       exit();
@@ -80,6 +83,7 @@ function ld_redirect_actions() {
 }
 add_action( 'wp', 'ld_redirect_actions' );
 
+<<<<<<< HEAD
 function logged_in_header() {
 	if ( is_user_logged_in() ) { ?>
     <div class="logged-in-header">
@@ -94,3 +98,18 @@ function logged_in_header() {
 }
 add_action( 'astra_header_before', 'logged_in_header' );
  
+=======
+/* function logged_in_header() { */
+/* 	if ( is_user_logged_in() ) { ?> */
+/*     <div class="logged-in-header"> */
+/*     <h5> */
+/*       <b> */
+/*         <?php echo wp_get_current_user()->user_login; ?> */
+/*       </b> */
+/*     </h5> */
+/*     </div> */
+/*   <?php */
+/* 	} */
+/* } */
+/* add_action( 'astra_header_before', 'logged_in_header' ); */
+>>>>>>> master

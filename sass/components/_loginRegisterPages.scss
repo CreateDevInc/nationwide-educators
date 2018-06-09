@@ -1,0 +1,127 @@
+@import '../variables';
+
+.uo_loginForm, 
+.ur-frontend-form,
+.already-have-account {
+  width: 100%;
+  margin: auto;
+  display: block;
+  max-width: 400px;
+  padding: 0;
+  border: 0;
+}
+
+#loginform,
+#lostpasswordform,
+.ur-frontend-form {
+  position: relative;
+  margin-top: 70px;
+}
+
+#loginform::before,
+#lostpasswordform::before,
+.ur-frontend-form::before {
+  @include header_font();
+  position: absolute;
+  top: -60px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.ur-frontend-form,
+.uo_loginForm {
+  form {
+    width: 100%;
+  }
+
+  form .ur-form-row .ur-form-grid {
+    padding: 0;
+  }
+
+  label,
+  h2 {
+    display: none !important;
+  }
+
+  #wp-submit,
+  .ur-submit-button {
+    @include transition(.2s, background-color);
+    @include light_header_font();
+
+    width: 100%;
+    margin: auto !important;
+    display: block;
+    padding: 10px 25px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $color-complement;
+    padding: 10px 25px;
+    height: 47px !important;
+  }
+
+  #wp-submit:hover {
+    background-color: $color-complement-dark;
+  }
+
+  .login-password,
+  .login-username, 
+  .ur-form-grid > div,
+  #lostpasswordform > p:first-child {
+    position: relative;
+
+    input {
+      width: 100%;
+      height: auto !important;
+      padding: 30px 10.26px 10.26px 10.26px !important;
+    }
+  }
+
+
+  .login-password::after,
+  .login-username::after,
+  .ur-form-grid > div::after, 
+  #lostpasswordform > p:first-child::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-complement;
+    font-size: 13px;
+    color: #fff;
+    padding: 0px 12px;
+    box-sizing: border-box;
+  }
+}
+
+.ur-frontend-form,
+.uo_loginForm {
+  .field-user_login::after,
+  .login-username::after {
+    content: "Username";
+  }
+  .field-user_email::after,
+  #lostpasswordform > p:first-child::after {
+    content: "Email Address";
+  }
+  .field-user_pass::after,
+  .login-password::after {
+    content: "Password"
+  }
+  .field-user_confirm_password::after {
+    content: "Confirm Password";
+  }
+}
+
+#loginform::before {
+  content: "Login";
+}
+
+.ur-frontend-form::before {
+  content: "Create an account";
+}
+
+#lostpasswordform::before {
+  content: "Reset Password"
+}

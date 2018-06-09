@@ -1,0 +1,12 @@
+.button {
+  color: #fff;
+  margin: 10px 0;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+
+  background-color: $color-complement;
+  &:hover {
+    background-color: $color-complement-dark; 
+  }
+}
+
