@@ -105,7 +105,8 @@ Version:        0.1.0
     bottom: 50px;
     z-index: 3;
     position: absolute;
-    text-align: center; }
+    text-align: center;
+    width: 100%; }
   .hero-section h1, .hero-section h3, .hero-section a {
     display: inline-block; }
   .hero-section h1 {

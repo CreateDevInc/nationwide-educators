@@ -13,7 +13,6 @@ get_header(); ?>
   </style>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
-
     <div class="hero-section">
       <div class="overlay"></div>
       <div class="text">
