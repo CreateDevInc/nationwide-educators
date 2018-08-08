@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd /var/www/html/nationwide/wp-content/themes/astrai-child
+npm run build
+git add .
+git commit -m "pushing to dev"
+git push
+
+ssh nationwide-dev << EOF
+  cd /var/www/html/wp-content/themes/astrai-child
+  sudo git pull
+EOF
+  

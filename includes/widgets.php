@@ -24,6 +24,12 @@ function ld_course_list__register_widget() {
 add_action( 'widgets_init', 'ld_course_list__register_widget' );
 
 
+/**
+ * Override the astra_logo function in the parent theme to support
+ * adding the Tagline underneath the main site title.
+ *
+ * @return void
+ */
 function astra_logo($echo = true) {
     $display_site_tagline = astra_get_option('display-site-tagline');
     $display_site_title = astra_get_option('display-site-title');
