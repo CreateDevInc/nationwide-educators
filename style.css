@@ -51,6 +51,12 @@ Version:        0.1.0
     color: #fff;
     background-color: #3e5977; }
 
+.site-title .subtitle {
+  font-family: Arial;
+  font-weight: 100;
+  font-size: 18px;
+  padding: 5px 0; }
+
 .main-header-bar {
   background-color: #6280a2;
   border-bottom-width: 0px !important; }
