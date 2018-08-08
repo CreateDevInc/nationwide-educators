@@ -63,13 +63,13 @@ Version:        0.1.0
   .main-header-bar .site-title a {
     color: #fff; }
   .main-header-bar .main-header-menu a {
-    color: #000; }
+    font-family: 'Montserrat';
+    color: #000;
+    font-size: 18px;
+    position: relative; }
   @media screen and (min-width: 921px) {
     .main-header-bar .main-header-menu a {
       color: #fff; } }
-  .main-header-bar .main-header-menu a {
-    font-size: 18px;
-    position: relative; }
   .main-header-bar #primary-menu a:hover {
     color: #fff; }
   .main-header-bar .widget-area a,
@@ -101,10 +101,15 @@ Version:        0.1.0
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3); }
   .hero-section .text {
-    left: 50px;
+    left: 0;
     bottom: 50px;
     z-index: 3;
-    position: absolute; }
+    position: absolute;
+    text-align: center; }
+  .hero-section h3 {
+    font-size: 2.3rem;
+    display: inline-block;
+    padding: 10px 20px; }
   .hero-section .button {
     font-size: 20px; }
 

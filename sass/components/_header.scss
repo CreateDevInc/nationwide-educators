@@ -17,16 +17,15 @@
     color: #fff;
   }
   .main-header-menu a {
+    font-family: 'Montserrat';
     color: #000;
+    font-size: 18px;
+    position: relative;
   }
   @media screen and (min-width: 921px) {
     .main-header-menu a {
       color: #fff;
     }
-  } // Navigation
-  .main-header-menu a {
-    font-size: 18px;
-    position: relative;
   }
   #primary-menu a:hover {
     color: #fff;
