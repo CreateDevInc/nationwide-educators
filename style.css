@@ -91,7 +91,13 @@ Version:        0.1.0
   height: 100vh;
   position: relative;
   max-height: 600px;
-  background-size: cover; }
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media screen and (max-width: 400px) {
+    .hero-section {
+      max-height: 800px; } }
   .hero-section .overlay {
     top: 0;
     left: 0;
@@ -101,10 +107,8 @@ Version:        0.1.0
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4); }
   .hero-section .text {
-    left: 0;
     bottom: 50px;
     z-index: 3;
-    position: absolute;
     text-align: center;
     width: 100%; }
   .hero-section h1, .hero-section h3, .hero-section a {
@@ -113,9 +117,18 @@ Version:        0.1.0
     font-size: 35px; }
   .hero-section h3 {
     font-size: 28px; }
+  .hero-section h1 {
+    padding: 0 10px; }
   .hero-section h3 {
     padding: 10px 20px;
     max-width: 910px; }
+  @media screen and (max-width: 400px) {
+    .hero-section h1 {
+      font-size: 30px; }
+    .hero-section h3 {
+      font-size: 24px; }
+    .hero-section a {
+      padding: 15px 8px; } }
   .hero-section .button {
     font-size: 20px; }
 
@@ -125,6 +138,8 @@ Version:        0.1.0
 .icons-section {
   padding: 50px;
   background-color: #6280a2; }
+  .icons-section h1, .icons-section h3 {
+    text-align: center; }
   .icons-section i {
     color: #fff;
     font-size: 80px; }
@@ -173,11 +188,6 @@ Version:        0.1.0
     display: block; }
   .icons-section .flex > div {
     margin: 55px 0; } }
-
-@media screen and (max-width: 500px) {
-  .hero-section .text {
-    width: 90%;
-    left: 5%; } }
 
 .button {
   color: #fff;
@@ -346,6 +356,10 @@ h1 {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300; }
+
+#page {
+  max-width: 1600px;
+  margin: auto; }
 
 a {
   color: #6280a2; }
