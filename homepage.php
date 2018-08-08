@@ -18,6 +18,7 @@ get_header(); ?>
       <div class="overlay"></div>
       <div class="text">
         <h1><?php the_field('hero-primary-text') ?></h1>
+        <br />
         <h3><?php the_field('hero-secondary-text') ?></h3>
         <br />
         <a href="<?php the_field('hero-button-link') ?>" class="button"><?php the_field('hero-button-text') ?></a>
