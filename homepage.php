@@ -25,6 +25,7 @@ get_header(); ?>
     </div>
 
     <div class="course-section">
+      <h1>Course Selection</h1>
       <?php
         echo ld_list_courses( array( 
           'include_thumbnail' => true,

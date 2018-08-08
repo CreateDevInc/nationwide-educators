@@ -44,11 +44,15 @@ $homepage-content-spacing: 50px;
     display: inline-block;
   }
 
-  h1 { font-size: 35px; }
-  h3 { font-size: 28px; }
+  // h1 { font-size: 35px; }
+  // h3 { font-size: 28px; }
 
   h1 {
     padding: 0 10px;
+  }
+
+  h1 {
+    max-width: 950px;
   }
 
   h3 {
@@ -71,6 +75,11 @@ $homepage-content-spacing: 50px;
 // by Nationwide.
 .course-section {
   padding: $homepage-content-spacing;
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 

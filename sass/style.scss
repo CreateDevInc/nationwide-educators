@@ -23,11 +23,6 @@ Version:        0.1.0
 h1 { @include header_font(); }
 h3 { @include light_header_font(); }
 
-#page {
-  max-width: 1600px;
-  margin: auto;
-}
-
 a { color: $color-complement; }
 a:hover { color: $color-complement-dark; }
 
