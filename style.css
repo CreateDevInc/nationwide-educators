@@ -106,10 +106,15 @@ Version:        0.1.0
     z-index: 3;
     position: absolute;
     text-align: center; }
+  .hero-section h1, .hero-section h3, .hero-section a {
+    display: inline-block; }
+  .hero-section h1 {
+    font-size: 35px; }
   .hero-section h3 {
-    font-size: 2.3rem;
-    display: inline-block;
-    padding: 10px 20px; }
+    font-size: 28px; }
+  .hero-section h3 {
+    padding: 10px 20px;
+    max-width: 910px; }
   .hero-section .button {
     font-size: 20px; }
 

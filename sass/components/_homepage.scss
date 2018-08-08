@@ -34,10 +34,16 @@ $homepage-content-spacing: 50px;
     text-align: center;
   }
 
-  h3 {
-    font-size: 2.3rem;
+  h1, h3, a {
     display: inline-block;
+  }
+
+  h1 { font-size: 35px; }
+  h3 { font-size: 28px; }
+
+  h3 {
     padding: 10px 20px;
+    max-width: 910px;
   }
 
   .button {
