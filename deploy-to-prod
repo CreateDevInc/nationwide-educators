@@ -8,6 +8,6 @@ git push
 
 ssh nationwide-dev << EOF
   cd /var/www/html/wp-content/themes/astrai-child
-  sudo git pull
+  sudo git pull origin master
 EOF
   
