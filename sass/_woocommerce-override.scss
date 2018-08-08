@@ -1,0 +1,9 @@
+@import 'variables';
+
+// Disable the effect of zooming in on product images by hover
+.woocommerce-product-gallery__wrapper { pointer-events: none !important; }
+.woocommerce-product-gallery__trigger { display: none; }
+
+.button {
+  background-color: $color-complement !important;
+}

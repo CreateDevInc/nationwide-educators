@@ -1,5 +1,13 @@
 
 <?php
+
+// Don't show related products on single product pages
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+remove_theme_support( 'wc-product-gallery-zoom' );
+remove_theme_support( 'wc-product-gallery-lightbox' );
+remove_theme_support( 'wc-product-gallery-slider' );
+
 // This changes the add to cart button to enroll
 add_filter('woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text');
 function custom_add_to_cart_text()

@@ -353,6 +353,15 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .learndash .completed:before, #learndash_profile .completed:before, .learndash_topic_dots ul .topic-completed span:before, .learndash_navigation_lesson_topics_list .topic-completed span:before, .learndash_navigation_lesson_topics_list ul .topic-completed span:before, .learndash .topic-completed span:before, body .list_arrow.lesson_completed:before {
   color: #6280a2; }
 
+.woocommerce-product-gallery__wrapper {
+  pointer-events: none !important; }
+
+.woocommerce-product-gallery__trigger {
+  display: none; }
+
+.button {
+  background-color: #6280a2 !important; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }

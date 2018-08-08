@@ -19,6 +19,7 @@ Version:        0.1.0
 @import 'components/coursePages';
 @import 'components/loginRegisterPages';
 @import 'components/profilePage';
+@import 'woocommerce-override';
 
 h1 { @include header_font(); }
 h3 { @include light_header_font(); }
