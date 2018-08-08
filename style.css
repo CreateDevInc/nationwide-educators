@@ -82,6 +82,9 @@ Version:        0.1.0
   .main-header-bar .ast-mobile-menu-buttons .menu-toggle {
     background-color: #3e5977; }
 
+.ast-header-break-point .site-header {
+  border-bottom-width: 0 !important; }
+
 .hero-section h1, .hero-section h3, .icons-section h1, .icons-section h3 {
   color: #fff;
   text-transform: uppercase; }
