@@ -1,12 +1,19 @@
 
 <?php
 
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+     unset($fields['order']['order_comments']);
+     unset($fields['billing']['billing_country']);
+     unset($fields['billing']['billing_company']);
+     return $fields;
+}
+
 // Don't show related products on single product pages
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
-remove_theme_support( 'wc-product-gallery-zoom' );
-remove_theme_support( 'wc-product-gallery-lightbox' );
-remove_theme_support( 'wc-product-gallery-slider' );
 
 // This changes the add to cart button to enroll
 add_filter('woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text');

@@ -362,6 +362,9 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .button {
   background-color: #6280a2 !important; }
 
+.woocommerce-additional-fields {
+  display: none; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }

@@ -7,3 +7,8 @@
 .button {
   background-color: $color-complement !important;
 }
+
+// We are removing all additional fields, so let's hide the label
+.woocommerce-additional-fields {
+  display: none;
+}
