@@ -75,10 +75,15 @@ function ld_redirect_actions()
         } else if (is_front_page() && user_can(get_current_user_id(), 'group_leader')) {
             wp_redirect(get_site_url() . '/overview');
             exit();
-        } else if (is_front_page()) {
-            wp_redirect(get_site_url() . '/profile');
-            exit();
         }
+
+        // Disabled for now to avoid conflicts with the WooCommerce check out,
+        // which sends a GET request to the homepage and triggers this code block.
+
+        //  else if (is_front_page()) {
+        //     wp_redirect(get_site_url() . '/profile');
+        //     exit();
+        // }
     }
 }
 add_action('wp', 'ld_redirect_actions');
