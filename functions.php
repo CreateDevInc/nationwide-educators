@@ -66,16 +66,16 @@ function ld_redirect_actions()
     $is_register_page = is_register_page($current_url);
 
     if ($is_logged_in) {
-        if ($is_register_page && $course) {
-            wp_redirect(ld_get_course_enrollment_page($course));
-            exit();
-        } else if ($is_register_page) {
-            wp_redirect(get_site_url());
-            exit();
-        } else if (is_front_page() && user_can(get_current_user_id(), 'group_leader')) {
-            wp_redirect(get_site_url() . '/overview');
-            exit();
-        }
+        /* if ($is_register_page && $course) { */
+        /*     wp_redirect(ld_get_course_enrollment_page($course)); */
+        /*     exit(); */
+        /* } else if ($is_register_page) { */
+        /*     wp_redirect(get_site_url()); */
+        /*     exit(); */
+        /* } else if (is_front_page() && user_can(get_current_user_id(), 'group_leader')) { */
+        /*     wp_redirect(get_site_url() . '/overview'); */
+        /*     exit(); */
+        /* } */
 
         // Disabled for now to avoid conflicts with the WooCommerce check out,
         // which sends a GET request to the homepage and triggers this code block.
