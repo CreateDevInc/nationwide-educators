@@ -1,6 +1,18 @@
 
 <?php
 
+
+// Auto Complete all WooCommerce orders.
+function custom_woocommerce_auto_complete_order( $order_id ) { 
+    if ( ! $order_id ) {
+        return;
+    }
+
+    $order = wc_get_order( $order_id );
+    $order->update_status( 'completed' );
+}
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+
 // Hook in
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
