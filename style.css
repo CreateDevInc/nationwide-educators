@@ -377,6 +377,17 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .woocommerce form .form-row label[for='billing_country'] {
   display: none; }
 
+.remove-from-cart {
+  background-color: #6280a2;
+  font-weight: bold;
+  border: 0;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  padding: 0; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }

@@ -1,6 +1,15 @@
 
 <?php
 
+// Can be called from the front end with a key called "key" on the POST
+// body to remove an item from the user's cart.
+function remove_item_from_cart() {
+    global $woocommerce;
+    $woocommerce->cart->remove_cart_item($_POST['key']);
+    wp_die();
+}
+add_action( 'wp_ajax_remove_item_from_cart', 'remove_item_from_cart' );
+add_action( 'wp_ajax_nopriv_remove_item_from_cart', 'remove_item_from_cart' );
 
 // Auto Complete all WooCommerce orders.
 function custom_woocommerce_auto_complete_order( $order_id ) { 

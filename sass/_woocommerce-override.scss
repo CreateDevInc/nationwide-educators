@@ -38,3 +38,16 @@
 .woocommerce form .form-row label[for='billing_country'] {
   display: none;
 }
+
+// buttons on checkout page that allow users to remove items from their cart
+.remove-from-cart {
+  background-color: $color-complement;
+  font-weight: bold;
+  border: 0;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  padding: 0
+}
