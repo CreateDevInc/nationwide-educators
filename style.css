@@ -365,6 +365,13 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .woocommerce-additional-fields {
   display: none; }
 
+.woocommerce-checkout .woocommerce-form-login-toggle,
+.woocommerce-checkout .woocommerce-form-coupon-toggle {
+  display: none; }
+
+.woocommerce-page .select2-container .select2-selection--single {
+  height: 38.5px; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }

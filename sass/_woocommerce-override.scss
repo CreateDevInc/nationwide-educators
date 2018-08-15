@@ -1,14 +1,33 @@
 @import 'variables';
 
-// Disable the effect of zooming in on product images by hover
-.woocommerce-product-gallery__wrapper { pointer-events: none !important; }
-.woocommerce-product-gallery__trigger { display: none; }
+// Disable the effect of zooming in on product images by hover.
+.woocommerce-product-gallery__wrapper {
+  pointer-events: none !important;
+}
+// Remove the magnifying glass from the top-right corner of the image.
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
 
 .button {
   background-color: $color-complement !important;
 }
 
-// We are removing all additional fields, so let's hide the label
+// We are removing all additional fields, so let's hide the label for
+// additional fields as well.
 .woocommerce-additional-fields {
   display: none;
+}
+
+// Hide unnecessary popups that can appear on the checkout form
+// about logging in and adding a coupon.
+.woocommerce-checkout .woocommerce-form-login-toggle,
+.woocommerce-checkout .woocommerce-form-coupon-toggle {
+  display: none;
+}
+
+// Force the State dropdown to always have the same height as the
+// other input elements.
+.woocommerce-page .select2-container .select2-selection--single {
+  height: 38.5px;
 }
