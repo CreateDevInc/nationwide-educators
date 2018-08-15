@@ -372,6 +372,11 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .woocommerce-page .select2-container .select2-selection--single {
   height: 38.5px; }
 
+#billing_country_field,
+#billing_country + .select2,
+.woocommerce form .form-row label[for='billing_country'] {
+  display: none; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }
