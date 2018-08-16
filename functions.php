@@ -32,7 +32,7 @@ function astra_parent_theme_enqueue_styles()
         'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
     );
     wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js', array('wc-checkout', 'jquery'), '1.0.0', true);
-    wp_localize_script('main-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+    wp_localize_script('main-js', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
 /**
@@ -67,19 +67,23 @@ function ld_redirect_actions()
     $is_account_page = is_account_page($current_url);
     $is_register_page = is_register_page($current_url);
 
-    if (preg_match('/.*cart\/?/', $current_url)) {
-        wp_redirect( get_permalink( wc_get_page_id( 'checkout' ) ) );
-        exit();
+    if (is_page_type('cart', $current_url)) {
+        global $woocommerce;
+
+        if ($woocommerce->cart->get_cart_contents_count() > 0) {
+            wp_redirect(get_permalink(wc_get_page_id('checkout')));
+            exit();
+        }
     }
 
     if ($is_logged_in) {
-        //  if ($is_register_page && $course) { 
+        //  if ($is_register_page && $course) {
         //      wp_redirect(ld_get_course_enrollment_page($course));
         //      exit();
-        //  } else if ($is_register_page) { 
+        //  } else if ($is_register_page) {
         //      wp_redirect(get_site_url());
         //      exit();
-        //  } else if (is_front_page() && user_can(get_current_user_id(), 'group_leader')) { 
+        //  } else if (is_front_page() && user_can(get_current_user_id(), 'group_leader')) {
         //      wp_redirect(get_site_url() . '/overview');
         //      exit();
         //  }
