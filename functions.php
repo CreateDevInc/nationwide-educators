@@ -67,12 +67,36 @@ function ld_redirect_actions()
     $is_account_page = is_account_page($current_url);
     $is_register_page = is_register_page($current_url);
 
+    $is_admin = current_user_can('administrator');
+
     if (is_page_type('cart', $current_url)) {
         global $woocommerce;
 
         if ($woocommerce->cart->get_cart_contents_count() > 0) {
             wp_redirect(get_permalink(wc_get_page_id('checkout')));
             exit();
+        }
+    }
+
+    // if user tries to access an enrollment page and is already enrolled in that course,
+    // then redirect them to the courses page for that course
+    if (preg_match('/.*\/enroll\/(\w|-)*\/?($|\?)/', $current_url)) {
+        $course_slug = explode('enroll/', $current_url)[1];
+        $is_enrolled = ld_user_is_enrolled_in_course($course_slug);
+
+        if ($is_enrolled && !$is_admin) {
+            wp_redirect(str_replace('enroll', 'courses', $current_url));
+        }
+    }
+
+    // if user tries to access a courses page and is not enrolled in that course,
+    // then redirect them to the enrollment page for that course
+    if (preg_match('/.*\/courses\/(\w|-)*\/?($|\?)/', $current_url)) {
+        $course_slug = explode('courses/', $current_url)[1];
+        $is_enrolled = ld_user_is_enrolled_in_course($course_slug);
+
+        if (!$is_enrolled && !$is_admin) {
+            wp_redirect(str_replace('courses', 'enroll', $current_url));
         }
     }
 
