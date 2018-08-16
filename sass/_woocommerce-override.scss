@@ -21,6 +21,7 @@
 
 // Hide unnecessary popups that can appear on the checkout form
 // about logging in and adding a coupon.
+.woocommerce-message[role="alert"],
 .woocommerce-checkout .woocommerce-form-login-toggle,
 .woocommerce-checkout .woocommerce-form-coupon-toggle {
   display: none;

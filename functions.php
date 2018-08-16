@@ -67,6 +67,11 @@ function ld_redirect_actions()
     $is_account_page = is_account_page($current_url);
     $is_register_page = is_register_page($current_url);
 
+    if (preg_match('/.*cart\/?/', $current_url)) {
+        wp_redirect( get_permalink( wc_get_page_id( 'checkout' ) ) );
+        exit();
+    }
+
     if ($is_logged_in) {
         //  if ($is_register_page && $course) { 
         //      wp_redirect(ld_get_course_enrollment_page($course));

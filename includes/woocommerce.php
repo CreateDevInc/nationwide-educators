@@ -1,6 +1,26 @@
 
 <?php
 
+function redirect_to_checkout_page() {
+    return get_permalink(wc_get_page_id('checkout'));
+}
+add_action( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout_page' );
+
+function redirect_to_checkout_page_on_error( $passed_validation, $product_id ) {
+    global $woocommerce;
+
+    $product_cart_id = $woocommerce->cart->generate_cart_id( $product_id );
+    $in_cart = $woocommerce->cart->find_product_in_cart( $product_cart_id );
+
+    if ( $in_cart ) {
+        wp_redirect( get_permalink( wc_get_page_id( 'checkout' ) ) );
+        return false;
+    }
+
+    return $passed_validation;
+}
+add_filter( 'woocommerce_add_to_cart_validation', 'redirect_to_checkout_page_on_error' );
+
 // Can be called from the front end with a key called "key" on the POST
 // body to remove an item from the user's cart.
 function remove_item_from_cart() {

@@ -365,6 +365,7 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .woocommerce-additional-fields {
   display: none; }
 
+.woocommerce-message[role="alert"],
 .woocommerce-checkout .woocommerce-form-login-toggle,
 .woocommerce-checkout .woocommerce-form-coupon-toggle {
   display: none; }
