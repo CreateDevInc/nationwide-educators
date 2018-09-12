@@ -362,9 +362,6 @@ body #learndash_profile .learndash_profile_quiz_heading {
 .button {
   background-color: #6280a2 !important; }
 
-.woocommerce-additional-fields {
-  display: none; }
-
 .woocommerce-message[role="alert"],
 .woocommerce-checkout .woocommerce-form-login-toggle,
 .woocommerce-checkout .woocommerce-form-coupon-toggle {
@@ -396,6 +393,19 @@ h1 {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300; }
+
+.logout-warning {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fd5e60;
+  color: #fff;
+  padding: 20px 40px;
+  text-align: center;
+  -webkit-transition: transform .5s;
+  -moz-transition: transform .5s;
+  transition: transform .5s; }
 
 a {
   color: #6280a2; }

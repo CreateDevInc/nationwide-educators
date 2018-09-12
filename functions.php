@@ -69,6 +69,8 @@ function ld_redirect_actions()
 
     $is_admin = current_user_can('administrator');
 
+    // Redirect user to checkout page from cart page
+    // if nothing is in the cart.
     if (is_page_type('cart', $current_url)) {
         global $woocommerce;
 
@@ -121,18 +123,18 @@ function ld_redirect_actions()
         //  }
     }
 }
-add_action('wp', 'ld_redirect_actions');
+// add_action('wp', 'ld_redirect_actions');
 
-/* function logged_in_header() { */
-/*     if ( is_user_logged_in() ) { ?> */
-/*     <div class="logged-in-header"> */
-/*     <h5> */
-/*       <b> */
-/*         <?php echo wp_get_current_user()->user_login; ?> */
-/*       </b> */
-/*     </h5> */
-/*     </div> */
-/*   <?php */
-/*     } */
-/* } */
-/* add_action( 'astra_header_before', 'logged_in_header' ); */
+ function logged_in_header() {
+     if ( is_user_logged_in() ) { ?>
+        <div class="logged-in-header">
+            <h5>
+            <b>
+                <?php echo wp_get_current_user()->user_login; ?>
+            </b>
+            </h5>
+        </div>
+   <?php
+     }
+ }
+ add_action( 'astra_header_before', 'logged_in_header' );

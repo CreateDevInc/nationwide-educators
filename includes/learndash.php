@@ -19,9 +19,6 @@ if (!function_exists('ld_user_is_enrolled_in_course')) {
 
         $id__course_access_list = explode(',', $course_data__unserialized['sfwd-courses_course_access_list']);
 
-        PC::debug($id__user, 'User ID');
-        PC::debug($id__course_access_list, 'Course Access List');
-
         $is_enrolled = in_array($id__user, $id__course_access_list);
 
         return $is_enrolled;
