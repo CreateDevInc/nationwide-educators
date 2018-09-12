@@ -124,17 +124,3 @@ function ld_redirect_actions()
     }
 }
 // add_action('wp', 'ld_redirect_actions');
-
- function logged_in_header() {
-     if ( is_user_logged_in() ) { ?>
-        <div class="logged-in-header">
-            <h5>
-            <b>
-                <?php echo wp_get_current_user()->user_login; ?>
-            </b>
-            </h5>
-        </div>
-   <?php
-     }
- }
- add_action( 'astra_header_before', 'logged_in_header' );
