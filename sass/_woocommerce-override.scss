@@ -13,12 +13,6 @@
   background-color: $color-complement !important;
 }
 
-// We are removing all additional fields, so let's hide the label for
-// additional fields as well.
-// .woocommerce-additional-fields {
-//   display: none;
-// }
-
 // Hide unnecessary popups that can appear on the checkout form
 // about logging in and adding a coupon.
 .woocommerce-message[role="alert"],
@@ -51,4 +45,8 @@
   float: right;
   text-align: center;
   padding: 0
+}
+
+.profile-page-link {
+  margin: 10px 0 !important;
 }

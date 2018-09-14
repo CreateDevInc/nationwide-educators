@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 $profile_page = home_url($wp->request) . '/profile';
-$thank_you_html = 'Thank you. You have been enrolled in the course. Please access it by going to your profile page: <br><a href="' . $profile_page . '">' . $profile_page . '</a>';
+$thank_you_html = 'Thank you. You have been enrolled in the course. Please access it by clicking the button below: <br><a class="button profile-page-link" href="' . $profile_page . '">Go to Courses Page</a>';
 ?>
 
 <div class="woocommerce-order">

@@ -123,4 +123,4 @@ function ld_redirect_actions()
         //  }
     }
 }
-// add_action('wp', 'ld_redirect_actions');
+add_action('wp', 'ld_redirect_actions');

@@ -386,6 +386,9 @@ body #learndash_profile .learndash_profile_quiz_heading {
   text-align: center;
   padding: 0; }
 
+.profile-page-link {
+  margin: 10px 0 !important; }
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; }
