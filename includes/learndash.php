@@ -12,12 +12,25 @@ if (!function_exists('ld_user_is_enrolled_in_course')) {
         global $wpdb;
 
         $id__user = get_current_user_id();
+
+        if ($id__user == 0) {
+          return false;
+        }
+
         $id__course = $wpdb->get_var("SELECT ID FROM wp_posts WHERE post_type = 'sfwd-courses' AND post_name = '$course_slug';");
+
+        global $PC;
 
         $course_data__serialized = $wpdb->get_var("SELECT meta_value FROM wp_postmeta WHERE meta_key = '_sfwd-courses' AND post_id = $id__course");
         $course_data__unserialized = maybe_unserialize($course_data__serialized);
 
-        $id__course_access_list = explode(',', $course_data__unserialized['sfwd-courses_course_access_list']);
+        $str__course_access_list = $course_data__unserialized['sfwd-courses_course_access_list'];
+
+        if (!$str__course_access_list) {
+          return false;
+        }
+
+        $id__course_access_list = explode(',', $str__course_access_list);
 
         $is_enrolled = in_array($id__user, $id__course_access_list);
 
